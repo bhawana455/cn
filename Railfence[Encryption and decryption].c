@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-char *remove_white_spaces(char *str)
+char *remove_white_spaces(char *str) // used to remove white spaces from original text
 {
 	int i = 0, j = 0;
 	while (str[i])
@@ -12,7 +12,7 @@ char *remove_white_spaces(char *str)
 	str[j] = '\0';
 	return str;
 }
-char *decrypt(char * str1 ,char *str2,int n1,int n2, char *str3)
+char *decrypt(char * str1 ,char *str2,int n1,int n2, char *str3) //  simple decryption part
 {
     int i=0,j=0,k=0;
     while(i<n1 && j<n2)
@@ -43,11 +43,12 @@ int main()
       str2[cnt2++]=str[i];
   }
   printf("Cipher Text: %s%s\n",str1,str2);
-  //decryption
+  //encryption is completed
   int n1= strlen(str1);
   int n2= strlen(str2);
   char str3[n1+n2];
   decrypt(str1,str2,n1,n2,str3);
+  printf("decryption:\n");
   printf("%s\n\n",str3);
   return 0;
 }
